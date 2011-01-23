@@ -4,19 +4,19 @@ Version:	2.2.2
 Release:	1
 License:	Ruby's
 Group:		Development/Languages
-Source0:	http://gems.rubyforge.org/gems/nanoc-%{version}.gem
+Source0:	http://gems.rubyforge.org/gems/%{name}-%{version}.gem
 # Source0-md5:	42fdae4c3ad07727513937ffd3a86bad
 URL:		http://nanoc.rubyforge.org
-BuildRequires:	rake
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	setup.rb = 3.4.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-nanoc is a site compiler written in Ruby for building awesome web sites.
+nanoc is a site compiler written in Ruby for building awesome web
+sites.
 
 %prep
-%setup -q -c -n nanoc-%{version}
+%setup -q -c
 tar xzf data.tar.gz
 cp %{_datadir}/setup.rb .
 cp %{_datadir}/setup.rb vendor/cri
@@ -58,8 +58,7 @@ ruby setup.rb install \
 
 cd ../..
 
-rm ri/created.rid ri/String/cdesc-String.yaml ri/Hash/cdesc-Hash.yaml \
-	ri/Time/cdesc-Time.yaml 
+rm ri/created.rid
 cp -a ri/* $RPM_BUILD_ROOT%{ruby_ridir}
 
 %clean
