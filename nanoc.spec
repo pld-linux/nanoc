@@ -8,7 +8,7 @@ Source0:	http://gems.rubyforge.org/gems/%{name}-%{version}.gem
 # Source0-md5:	42fdae4c3ad07727513937ffd3a86bad
 URL:		http://nanoc.rubyforge.org
 BuildRequires:	rpmbuild(macros) >= 1.277
-BuildRequires:	setup.rb = 3.4.1
+BuildRequires:	setup.rb >= 3.4.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
